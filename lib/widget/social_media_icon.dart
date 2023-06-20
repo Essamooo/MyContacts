@@ -1,3 +1,4 @@
+import 'package:contacts/start.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,8 +17,7 @@ class SocialMediaIcone extends StatelessWidget {
       padding: EdgeInsets.all(24.0),
       child: InkWell(
         child: CircleAvatar(backgroundColor: Colors.transparent ,backgroundImage: AssetImage("assets/$socialMediaImagePath.png",),),
-        onTap: () => launchUrl(Uri.parse(socialMediaLink),
-        mode: LaunchMode.externalApplication)
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StartSocialMedia(socialMediaLink: socialMediaLink),))
       ),
     );
   }
